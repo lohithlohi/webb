@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jump Search</title>
+      </head>
+      <body>
+        <h1>Jump Search</h1>
+      
+        <script>
+            let arr = prompt("Enter array in comma seperated: ");
+            arr = arr.split(",").map(Number);
+
+            let key = parseInt(prompt("Enter key"));
+
+            let size = arr.length;
+            let low=0, flag=0;
+            let jump = Math.floor(Math.sqrt(size));
+
+            for(let i=0; i<size; i+=jump){
+              if(arr[i] == key){
+                alert("Key found at index "+i);
+                flag=1
+                break;
+              }
+              if(arr[i] < key){
+                low = i;
+              }
+              if(arr[i] > key){
+                break;
+              }
+            }
+
+            if(!flag){
+              for(let i=low; i<size; i++){
+                if(arr[i] == key){
+                  alert("Key found at index "+i);
+                  flag=1;
+                  break;
+                }
+              }
+            }
+
+            if(!flag){
+              alert("Key not found")
+            }
+        
+        </script>
+      </body>
+      </html>
+      

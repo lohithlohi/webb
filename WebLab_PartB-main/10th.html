@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>welcome habibi</h2>
+    <p id="vs11"></p>
+
+    <script>
+        let count =localStorage.getItem('vs11');
+
+        if(count=== null)
+        {count =1;
+        localStorage.setItem('vs11',count);
+        }
+        else
+        {
+            count=parseInt(count)+1;
+            localStorage.setItem('vs11',count);
+        }
+
+        document.getElementById('vs11').textContent=`total visitors: ${count}`;
+    </script>
+</body>
+</html>
